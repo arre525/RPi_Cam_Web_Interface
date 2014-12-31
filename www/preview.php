@@ -11,7 +11,10 @@
       }
       if(isset($_GET["delete_all"])) {
         $files = scandir("media");
-        foreach($files as $file) unlink("media/$file");
+        foreach($files as $file)
+        {
+          if(preg_match("/^.+\.jpg/",$file)) unlink("media/$file");
+        }
       }
       else if(isset($_GET["file"])) {
         echo "<h1>Preview</h1>";
