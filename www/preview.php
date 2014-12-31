@@ -14,6 +14,7 @@
         foreach($files as $file)
         {
           if(preg_match("/^.+\.jpg/",$file)) unlink("media/$file");
+          if(preg_match("/^.+\.avi/",$file)) unlink("media/$file");
         }
       }
       else if(isset($_GET["file"])) {
