@@ -27,6 +27,9 @@
       <input id="timelapse_button" type="button" class="btn btn-primary">
       <input id="md_button" type="button" class="btn btn-primary">
       <input id="halt_button" type="button" class="btn btn-danger">
+      <br>
+      <input id="meteox_button" type="button" value="Start Meteox" onclick="sys_meteoxstart();" class="btn btn-primary">
+      <input id="meteox_button" type="button" value="Stop Meteox" onclick="sys_meteoxkill();" class="btn btn-danger">
   	</div>
   	<div class="container-fluid text-center">
 		<a href="preview.php" class="btn btn-default">Download Videos and Images</a>

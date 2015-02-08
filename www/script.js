@@ -46,6 +46,17 @@ function set_roi() {
 
 }
 
+
+function sys_meteoxstart() {
+  ajax_status.open("GET", "cmd_func.php?cmd=meteoxstart", true);
+  ajax_status.send();
+}
+function sys_meteoxkill() {
+  ajax_status.open("GET", "cmd_func.php?cmd=meteoxkill", true);
+  ajax_status.send();
+}
+
+
 //
 // Shutdown
 //
@@ -65,9 +76,15 @@ function sys_reboot() {
 var mjpeg_img;
 var halted = 0;
 
+function doactualreload () {
+mjpeg_img.src = "cam_pic.php?time=" + new Date().getTime();
+}
+
 function reload_img () {
   if(!halted) mjpeg_img.src = "cam_pic.php?time=" + new Date().getTime();
   else setTimeout("reload_img()", 500);
+  
+  //setTimeout("doactualreload()", 500);
 }
 
 function error_img () {
